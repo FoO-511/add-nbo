@@ -43,15 +43,19 @@ void print_result(uint32_t h1, uint32_t h2, uint32_t sum){
 }
 
 uint32_t read_file_binary2uint(char* filepath){
+	FILE* fp = NULL;
 	uint32_t num;
-	ifstream file(filepath, ios::binary);
-
-	if(file.is_open())
-	{
-		file.read(reinterpret_cast<char*>(&num), sizeof(uint32_t));
-		file.close();
-	} else {return -1;}
+	fp = fopen(filepath, "rb");
 	
+	if (fp == NULL)
+	{
+		fprintf(stderr, "err\n");
+		return 1;
+	}
+
+	fread(&num, sizeof(uint32_t), 1,fp);
+	fclose(fp);
+
 	return num;
 }
 
