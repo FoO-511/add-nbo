@@ -8,7 +8,7 @@ int main(int argc, char*argv[]) {
 	char* file1 = argv[1];
 	char* file2 = argv[2];
 
-	unsigned int n1, n2, h1, h2, sum;
+	uint32_t n1, n2, h1, h2, sum;
 
 	n1 = read_file_binary2uint(file1);
 	n2 = read_file_binary2uint(file2);

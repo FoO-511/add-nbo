@@ -2,16 +2,16 @@
 #include <fstream>
 #include <unistd.h>
 #include <iostream>
-
+#include <stdint.h>
 #pragma once
 using namespace std;
 
 int handle_input(int argc, char*argv[]);
 
-unsigned int ntoh(unsigned int n);
+uint32_t ntoh(uint32_t n);
 
-void print_format_num(unsigned int num);
+void print_format_num(uint32_t num);
 
-void print_result(unsigned int h1, unsigned int h2, unsigned int sum);
+void print_result(uint32_t h1, uint32_t h2, uint32_t sum);
 
-unsigned int read_file_binary2uint(char* filepath);
+uint32_t read_file_binary2uint(char* filepath);
